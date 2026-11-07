@@ -1,4 +1,4 @@
-/* Car Care Club station pages (/w/, /w/<token>/) and 404. Same palette and type as the consumer page. */
+/* Car Care Club site: consumer page (/), station pages (/w/, /w/<token>/) and 404. */
 /* Inter 4.001 (SIL OFL, fonts/LICENSE-Inter.txt), self-hosted: latin subset, wght 400-800, all OpenType features kept */
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400 800; font-display: swap; src: url(/assets/fonts/inter-latin.woff2) format('woff2'); }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

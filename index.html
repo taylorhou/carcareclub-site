@@ -3,314 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Car Care Club — One Membership. Every Car Wash.</title>
-  <meta name="description" content="Unlimited car washes at gas stations near you. One membership, every wash. Join Car Care Club today.">
+  <title>Car Care Club: one car wash membership, starting in Houston</title>
+  <meta name="description" content="Car Care Club is a monthly membership for gas station car washes. We're starting in Houston and opening area by area as stations join. Join the Houston waitlist.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #0a0a0a;
-      --white: #ffffff;
-      --gray-100: #f5f5f5;
-      --gray-200: #e5e5e5;
-      --gray-400: #a3a3a3;
-      --gray-600: #525252;
-      --gray-800: #262626;
-      --accent: #2563eb;
-      --accent-dark: #1d4ed8;
-      --green: #16a34a;
-      --radius: 12px;
-      --max-w: 1100px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-200); }
-    .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: 800; font-size: 18px; text-decoration: none; color: var(--black); letter-spacing: -0.3px; }
-    .logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--gray-600); font-size: 14px; font-weight: 500; transition: color .15s; }
-    .nav-links a:hover { color: var(--black); }
-    .nav-cta { background: var(--accent); color: white; padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s; }
-    .nav-cta:hover { background: var(--accent-dark); }
-    @media (max-width: 640px) { .nav-links { display: none; } }
-
-    /* HERO */
-    .hero { background: var(--black); color: white; padding: 96px 24px 80px; text-align: center; }
-    .hero-tag { display: inline-block; background: rgba(37,99,235,0.2); color: #93c5fd; font-size: 12px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 24px; border: 1px solid rgba(37,99,235,0.3); }
-    .hero h1 { font-size: clamp(40px, 7vw, 80px); font-weight: 900; line-height: 1.05; letter-spacing: -2px; max-width: 800px; margin: 0 auto 24px; }
-    .hero h1 em { font-style: normal; color: #60a5fa; }
-    .hero p { font-size: 18px; color: #a3a3a3; max-width: 480px; margin: 0 auto 40px; line-height: 1.6; }
-    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--accent); color: white; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 700; text-decoration: none; transition: background .15s, transform .1s; display: inline-block; }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-    .btn-secondary { background: rgba(255,255,255,0.1); color: white; padding: 14px 28px; border-radius: var(--radius); font-size: 16px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); transition: background .15s; display: inline-block; }
-    .btn-secondary:hover { background: rgba(255,255,255,0.15); }
-    .hero-note { margin-top: 20px; font-size: 13px; color: var(--gray-400); }
-
-    /* QR CALLOUT */
-    .qr-bar { background: #1e3a5f; color: #93c5fd; text-align: center; padding: 12px 24px; font-size: 14px; font-weight: 500; }
-    .qr-bar strong { color: white; }
-
-    /* SOCIAL PROOF */
-    .stats { max-width: var(--max-w); margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center; }
-    .stat-num { font-size: 48px; font-weight: 900; letter-spacing: -2px; color: var(--black); }
-    .stat-label { font-size: 14px; color: var(--gray-600); margin-top: 4px; }
-    @media (max-width: 640px) { .stats { grid-template-columns: 1fr; gap: 32px; } }
-
-    /* HOW IT WORKS */
-    section { padding: 80px 24px; }
-    .section-inner { max-width: var(--max-w); margin: 0 auto; }
-    .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 12px; }
-    .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
-    .section-sub { font-size: 17px; color: var(--gray-600); max-width: 560px; line-height: 1.6; margin-bottom: 56px; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .step { padding: 32px; background: var(--gray-100); border-radius: var(--radius); }
-    .step-num { width: 40px; height: 40px; background: var(--accent); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; margin-bottom: 16px; }
-    .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-    .step p { font-size: 15px; color: var(--gray-600); line-height: 1.6; }
-    @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
-
-    /* PRICING */
-    .pricing-section { background: var(--gray-100); }
-    .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 700px; }
-    .plan { background: white; border-radius: var(--radius); padding: 32px; border: 2px solid var(--gray-200); }
-    .plan.featured { border-color: var(--accent); position: relative; }
-    .plan-badge { position: absolute; top: -12px; left: 24px; background: var(--accent); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: .5px; }
-    .plan-price { font-size: 42px; font-weight: 900; letter-spacing: -2px; }
-    .plan-price span { font-size: 16px; font-weight: 500; color: var(--gray-600); }
-    .plan-name { font-size: 14px; font-weight: 600; color: var(--gray-600); margin-bottom: 20px; margin-top: 4px; }
-    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-    .plan-features li { font-size: 15px; color: var(--gray-800); display: flex; align-items: center; gap: 8px; }
-    .plan-features li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
-    .plan-cta { display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; background: var(--accent); color: white; transition: background .15s; }
-    .plan-cta:hover { background: var(--accent-dark); }
-    @media (max-width: 580px) { .plans { grid-template-columns: 1fr; } }
-
-    /* DIVIDER */
-    .divider { border: none; border-top: 1px solid var(--gray-200); max-width: var(--max-w); margin: 0 auto; }
-
-    /* PARTNER SECTION */
-    .partner-section { background: var(--black); color: white; }
-    .partner-section .section-label { color: #60a5fa; }
-    .partner-section .section-title { color: white; }
-    .partner-section .section-sub { color: #a3a3a3; }
-    .partner-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .partner-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 28px; }
-    .partner-card .icon { font-size: 32px; margin-bottom: 16px; }
-    .partner-card h3 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px; }
-    .partner-card p { font-size: 14px; color: #a3a3a3; line-height: 1.6; }
-    .partner-cta-box { margin-top: 48px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3); border-radius: var(--radius); padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .partner-cta-box h3 { font-size: 22px; font-weight: 800; color: white; }
-    .partner-cta-box p { font-size: 15px; color: #a3a3a3; margin-top: 4px; }
-    .btn-partner { background: white; color: var(--black); padding: 14px 28px; border-radius: var(--radius); font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: background .15s; }
-    .btn-partner:hover { background: var(--gray-100); }
-    @media (max-width: 760px) { .partner-cards { grid-template-columns: 1fr; } }
-
-    /* FAQ */
-    .faq-list { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
-    .faq-item { border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; }
-    .faq-q { padding: 20px 24px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .faq-q::after { content: "+"; font-size: 20px; color: var(--gray-400); font-weight: 400; flex-shrink: 0; }
-    .faq-a { padding: 0 24px 20px; font-size: 15px; color: var(--gray-600); line-height: 1.7; }
-
-    /* FOOTER */
-    footer { background: var(--black); color: var(--gray-400); padding: 40px 24px; text-align: center; font-size: 14px; }
-    footer a { color: var(--gray-400); text-decoration: none; }
-    footer a:hover { color: white; }
-    .footer-inner { max-width: var(--max-w); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .footer-links { display: flex; gap: 24px; }
-  </style>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">Car Care <span>Club</span></a>
-    <ul class="nav-links">
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#partners">For Stations</a></li>
-    </ul>
-    <a href="#pricing" class="nav-cta" data-cta="join-nav">Join Now</a>
   </div>
 </nav>
 
-<!-- QR arrival bar — shown when coming from a QR code -->
-<div class="qr-bar">
-  📍 You scanned a QR code at a <strong>Car Care Club</strong> partner station — you're in the right place.
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-tag">Now launching in Nashville</div>
-  <h1>One membership.<br><em>Every car wash.</em></h1>
-  <p>Scan, wash, done. Unlimited car washes at partner gas stations near you — for one low monthly price.</p>
-  <div class="hero-actions">
-    <a href="#pricing" class="btn-primary" data-cta="join-hero">Join the Club →</a>
-    <a href="#how-it-works" class="btn-secondary">See how it works</a>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-tag">Starting in Houston</p>
+    <h1>One membership. Every car wash in our network.</h1>
+    <p>Car Care Club is a monthly membership for gas station car washes. We're starting in Houston, and stations there are joining now.</p>
+    <div class="actions">
+      <a class="btn btn-yes" href="mailto:team@carcareclub.co?subject=Houston%20waitlist&amp;body=Add%20me%20to%20the%20Houston%20waitlist.%20My%20zip%20code%3A%20" data-cta="join-houston" data-at="hero">Join the Houston waitlist</a>
+      <a class="btn btn-ask" href="mailto:team@carcareclub.co?subject=Waitlist%20for%20my%20area&amp;body=Add%20me%20to%20the%20waitlist%20for%20my%20area.%20My%20city%20and%20zip%20code%3A%20" data-cta="join-other" data-at="hero">Somewhere else? Tell us your area</a>
+    </div>
   </div>
-  <p class="hero-note">No contracts. Cancel anytime. First wash free.</p>
+</header>
+
+<section class="block" id="areas" data-sec>
+  <div class="inner">
+    <p class="label">Area by area</p>
+    <h2>Why one area first</h2>
+    <p>A membership is only worth it if there's a car wash in the network near you. So we open one area at a time, and Houston is first.</p>
+    <p>Membership opens in an area once enough stations there have signed on. Everyone on that area's waitlist hears first.</p>
+    <p>Not in Houston? <a href="mailto:team@carcareclub.co?subject=Waitlist%20for%20my%20area&amp;body=Add%20me%20to%20the%20waitlist%20for%20my%20area.%20My%20city%20and%20zip%20code%3A%20" data-cta="join-other" data-at="areas">Tell us your area</a>. It helps us pick the next one.</p>
+  </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div>
-    <div class="stat-num">$35</div>
-    <div class="stat-label">per month, unlimited washes</div>
+<section class="block" id="how-it-works" data-sec>
+  <div class="inner">
+    <p class="label">How it works</p>
+    <h2>Three steps, once your area opens</h2>
+    <ol class="steps">
+      <li><h3>Sign up</h3><p>Join online and pay one monthly price. No app to download.</p></li>
+      <li><h3>Pull into a station in the network</h3><p>Look for the Car Care Club sticker at the wash bay.</p></li>
+      <li><h3>Scan and wash</h3><p>Scan the sticker with your phone, then wash.</p></li>
+    </ol>
   </div>
-  <div>
-    <div class="stat-num">0</div>
-    <div class="stat-label">apps to download</div>
-  </div>
-  <div>
-    <div class="stat-num">QR</div>
-    <div class="stat-label">scan &amp; go, every time</div>
-  </div>
-</div>
+</section>
 
-<hr class="divider">
+<section class="block" id="pricing" data-sec>
+  <div class="inner">
+    <p class="label">Price</p>
+    <h2>Announced when your area opens</h2>
+    <p>One monthly price, no contract. We'll email it to the waitlist before membership opens in your area.</p>
+  </div>
+</section>
 
-<!-- HOW IT WORKS — CONSUMER -->
-<section id="how-it-works" data-sec>
-  <div class="section-inner">
-    <div class="section-label">How it works</div>
-    <h2 class="section-title">Wash your car in 3 steps</h2>
-    <p class="section-sub">No app. No tokens. No hassle. Just scan and wash.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Join online</h3>
-        <p>Sign up in 60 seconds. Get your unique QR code by text. That's your membership — it lives in your messages.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Scan at any partner station</h3>
-        <p>Look for the Car Care Club sign at the car wash entrance. Scan the station QR with your phone, show your member code, wash.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Wash as much as you want</h3>
-        <p>One wash per day, unlimited days per month. A clean car every single day for one flat fee.</p>
-      </div>
+<section class="block" id="stations" data-sec>
+  <div class="inner">
+    <p class="label">For gas station owners</p>
+    <h2>Run a gas station car wash?</h2>
+    <p>We pay the station <span class="nb">$3-6</span> for every member wash, paid monthly. It costs you nothing, just a QR sticker at your bay.</p>
+    <div class="actions">
+      <a class="btn btn-ask" href="/w/" data-cta="stations">See how it works for stations</a>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" class="pricing-section" data-sec>
-  <div class="section-inner">
-    <div class="section-label">Pricing</div>
-    <h2 class="section-title">Simple, flat pricing</h2>
-    <p class="section-sub">No surprises. Wash every day or once a week — same price either way.</p>
-    <div class="plans">
-      <div class="plan">
-        <div class="plan-price">$29<span>/mo</span></div>
-        <div class="plan-name">Basic Wash</div>
-        <ul class="plan-features">
-          <li>1 wash per day</li>
-          <li>All partner stations</li>
-          <li>QR code membership</li>
-          <li>Cancel anytime</li>
-        </ul>
-        <a href="mailto:taylor@carcareclub.co?subject=Join Car Care Club — Basic" class="plan-cta" data-cta="join-basic">Get Started</a>
-      </div>
-      <div class="plan featured">
-        <div class="plan-badge">Most Popular</div>
-        <div class="plan-price">$35<span>/mo</span></div>
-        <div class="plan-name">Premium Wash</div>
-        <ul class="plan-features">
-          <li>1 wash per day</li>
-          <li>All partner stations</li>
-          <li>QR code membership</li>
-          <li>Tire shine &amp; air dry</li>
-          <li>Cancel anytime</li>
-        </ul>
-        <a href="mailto:taylor@carcareclub.co?subject=Join Car Care Club — Premium" class="plan-cta" data-cta="join-premium">Get Started</a>
-      </div>
-    </div>
-    <p style="margin-top:24px; font-size:14px; color:var(--gray-600);">Questions? Email <a href="mailto:taylor@carcareclub.co" style="color:var(--accent);" data-cta="email">taylor@carcareclub.co</a></p>
-  </div>
-</section>
-
-<!-- PARTNER / STATION OWNER SECTION -->
-<section id="partners" class="partner-section" data-sec>
-  <div class="section-inner">
-    <div class="section-label">For gas station owners</div>
-    <h2 class="section-title">Turn idle wash bays into steady income</h2>
-    <p class="section-sub">Your car wash sits empty most of the day. We fill those slots with paying members and send you a check every two weeks.</p>
-    <div class="partner-cards">
-      <div class="partner-card">
-        <div class="icon">💵</div>
-        <h3>$6–8 per wash</h3>
-        <p>We pay you for every member wash at your station. Direct deposit every two weeks, no invoicing required.</p>
-      </div>
-      <div class="partner-card">
-        <div class="icon">🆓</div>
-        <h3>Zero cost to join</h3>
-        <p>No equipment to buy, no software to install. We ship a QR code sticker. You put it up. Done.</p>
-      </div>
-      <div class="partner-card">
-        <div class="icon">📈</div>
-        <h3>Extra revenue, zero effort</h3>
-        <p>Members come to you — washes that would have never happened. No changes to your existing operations.</p>
-      </div>
-    </div>
-    <div class="partner-cta-box">
-      <div>
-        <h3>Become a founding partner station</h3>
-        <p>We're onboarding our first 10 stations in Nashville. Founding partners get better rates and first pick of territory.</p>
-      </div>
-      <a href="mailto:taylor@carcareclub.co?subject=Partner Station Inquiry" class="btn-partner" data-cta="partner">Get in touch →</a>
+<section class="block" id="faq" data-sec>
+  <div class="inner">
+    <p class="label">Questions</p>
+    <h2>Common questions</h2>
+    <div class="faq">
+      <details data-q="when"><summary>When does membership open in Houston?</summary><p>When enough Houston stations have joined. We don't have a date yet. Everyone on the Houston waitlist hears first.</p></details>
+      <details data-q="waitlist"><summary>What happens when I join the waitlist?</summary><p>You send us a short email with your zip code. We add you to the list for your area and email you when it opens. There's nothing to pay now.</p></details>
+      <details data-q="other"><summary>I'm not in Houston. Can I join?</summary><p>Yes. Tell us your city and zip code and we'll add you to the list for your area. It helps us decide where to go next.</p></details>
+      <details data-q="app"><summary>Do I need an app?</summary><p>No. You scan the sticker at the wash bay with your phone.</p></details>
+      <details data-q="cancel"><summary>Can I cancel?</summary><p>Yes, any time. No contract and no cancellation fees.</p></details>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" data-sec>
-  <div class="section-inner">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title">Common questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">Do I need to download an app?</div>
-        <div class="faq-a">Nope. Your membership is a QR code delivered by text message. Show it at the wash, scan the station QR, and you're good to go.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How many washes do I get?</div>
-        <div class="faq-a">One wash per day, unlimited days per month. Most members wash 4–8 times per month — still way cheaper than paying per wash.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Which stations accept Car Care Club?</div>
-        <div class="faq-a">We're launching in Nashville with our founding partner stations. Look for the Car Care Club sign at the car wash entrance. More stations added regularly.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I cancel anytime?</div>
-        <div class="faq-a">Yes. No contracts, no cancellation fees. Cancel before your next billing date and you won't be charged again.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">I own a gas station. How do I join as a partner?</div>
-        <div class="faq-a">Email us at taylor@carcareclub.co or use the contact button in the "For Stations" section above. We'll reach out within 24 hours.</div>
-      </div>
+<section class="block end">
+  <div class="inner">
+    <p class="note">Car Care Club is a startup and we're building this now. If something here doesn't make sense, email <a href="mailto:team@carcareclub.co" data-cta="contact">team@carcareclub.co</a>.</p>
+    <div class="actions">
+      <a class="btn btn-yes" href="mailto:team@carcareclub.co?subject=Houston%20waitlist&amp;body=Add%20me%20to%20the%20Houston%20waitlist.%20My%20zip%20code%3A%20" data-cta="join-houston" data-at="end">Join the Houston waitlist</a>
+      <a class="btn btn-ask" href="mailto:team@carcareclub.co?subject=Waitlist%20for%20my%20area&amp;body=Add%20me%20to%20the%20waitlist%20for%20my%20area.%20My%20city%20and%20zip%20code%3A%20" data-cta="join-other" data-at="end">Tell us your area</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div style="font-weight:800; font-size:16px; color:white;">Car Care <span style="color:#60a5fa;">Club</span></div>
-    <div class="footer-links">
-      <a href="mailto:taylor@carcareclub.co" data-cta="contact">Contact</a>
-      <a href="#partners">Partner with us</a>
-      <a href="#pricing">Pricing</a>
-    </div>
-    <div>© 2026 Car Care Club. Houston, TX.</div>
+  <div class="inner">
+    <div class="footer-name">Car Care <span>Club</span></div>
+    <div>Car Care Club, PO Box 4007, Houston, TX 77001</div>
+    <div>We count visits to this page to improve it. No cookies, no ads.</div>
   </div>
 </footer>
 
